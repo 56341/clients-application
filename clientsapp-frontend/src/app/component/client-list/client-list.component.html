@@ -1,0 +1,36 @@
+<div class="py-5 text-center">
+  <h2>Clients</h2>
+</div>
+<div>
+  <div *ngIf="!clients?.length" class="text-center mt-5">
+    <p>
+      No clients were found. Start by adding your first client.
+    </p>
+  </div>
+  <div *ngIf="clients?.length">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Username</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let client of clients; let i = index">
+        <th scope="row">{{i}}</th>
+        <td>{{ client.firstName }}</td>
+        <td>{{ client.lastName }}</td>
+        <td>{{ client.username }}</td>
+        <td data-toggle="tooltip" data-placement="bottom" data-trigger="hover" title="Coming soon!">
+          <a href="#" class="btn btn-primary disabled">
+            Edit client
+          </a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
